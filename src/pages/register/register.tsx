@@ -34,37 +34,10 @@ const Register: React.FC = () => {
     password: Yup.string().required('This Field is required'),
   });
 
-  useEffect( () => {
-    if ( localStore.get('token') !== null ) {
-      const decodedJwt: any = jwt(localStore.get('token'));
-      const now = moment();
-      const expDate = moment(decodedJwt['exp'] * 1000);
-      if (now.isBefore(expDate)) {
-        history.push(`/${locale}/dashboard`);
-      } else {
-        localStorage.removeItem('token');
-        history.push('/login');
-      }
-    }
-  }, []);
+  useEffect( () => {}, []);
 
   const formSubmitHandler = ( values: FormikValues ) => {
     setIsWaiting( (prevState: boolean) => true );
-    userLogin({ user: { email: values.username, password: values.password }}).subscribe({
-      next: ( response: any) => {
-        setIsWaiting( (prevState: boolean) => false );
-        const token = response['user']['token'];
-        history.push(`/${locale}/dashboard`);
-        dispatch(actions.User.setUserInfo({
-          token,
-          avatar: response['user']['image'],
-          firstName: response['user']['username'],
-        }));
-      },
-      error: (err) => {
-        setIsWaiting( (prevState: boolean) => false );
-      },
-    });
   };
 
   const formik = useFormik({

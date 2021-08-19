@@ -40,7 +40,7 @@ const Login: React.FC = () => {
       const now = moment();
       const expDate = moment(decodedJwt['iat'] * 1000);
       if (expDate.isValid()) {
-        history.push(`/${locale}/dashboard`);
+        history.push(`/${locale}/articles`);
       } else {
         localStorage.removeItem('token');
         history.push('/login');
@@ -58,7 +58,7 @@ const Login: React.FC = () => {
           firstName: response['user']['username'],
         }));
         setTimeout( () => {
-          history.push(`/${locale}/dashboard`);
+          history.push(`/${locale}/articles`);
         }, 1000);
       },
       error: (err) => {
