@@ -31,6 +31,26 @@ const useStyle = makeStyles((theme: Theme) =>
       justifyContent: 'center',
       padding: theme.spacing(2, 0),
     },
+    SubmitBtnWrapper: {
+      position: 'relative',
+      marginBottom: theme.spacing(1),
+      width: '100%',
+    },
+    FormFooter: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      justifyContent: 'flex-start',
+      padding: theme.spacing(3, 0, 0),
+    },
+    buttonProgress: {
+      color: theme.palette.success.main,
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      marginTop: -12,
+      marginLeft: -12,
+    },
   })
 );
 
