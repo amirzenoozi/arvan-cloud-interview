@@ -1,10 +1,10 @@
 import React, { lazy, LazyExoticComponent } from 'react';
-import { IllustrationViewer } from 'src/components/static/illustration-viewer';
 
 const MainPage = lazy(() => import('src/pages/dashboard/main'));
 
 export enum RouteName {
-  MAIN = 'dashboard',
+  MAIN = 'articles',
+  ARTICLES_PAGES = 'articles/page/:page',
 }
 
 export interface RouteProps {
@@ -19,8 +19,13 @@ export const routes: RouteProps[] = [
   {
     path: RouteName.MAIN,
     component: MainPage,
-    routeTitle: 'dashboard',
-    dashboardSlug: 'ho',
+    routeTitle: 'articles',
+    exact: true,
+  },
+  {
+    path: RouteName.ARTICLES_PAGES,
+    component: MainPage,
+    routeTitle: 'articles',
     exact: true,
   },
 ];

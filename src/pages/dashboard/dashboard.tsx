@@ -20,8 +20,8 @@ const Dashboard = () => {
         {routes.map(({ path, routeTitle, ...rest }, index: number) => (
           <PrivateRoute path={`/${locale}/${path}`} {...rest} key={index} />
         ))}
-        <Redirect exact from={`/${locale}/`} to={`/${locale}/dashboard`} />
-        <Redirect exact from={`/`} to={`/${locale}/dashboard`} />
+        <Redirect exact from={`/${locale}/`} to={`/${locale}/articles`} />
+        <Redirect exact from={`/`} to={`/${locale}/articles`} />
         <Redirect to={`/404?from=${location.pathname.substring(1)}`} />
       </Switch>
     </Layout>
