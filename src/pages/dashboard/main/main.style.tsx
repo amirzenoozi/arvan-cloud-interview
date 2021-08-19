@@ -31,6 +31,9 @@ const useStyle = makeStyles((theme: Theme) =>
       justifyContent: 'center',
       padding: theme.spacing(2, 0),
     },
+    ArticleMenu: {
+      position: 'relative',
+    },
   })
 );
 

@@ -10,6 +10,7 @@ import { DatePipe } from 'src/pipes/date/date.pipe';
 import { Cached } from '@material-ui/icons';
 import { useHistory, useParams } from 'react-router-dom';
 import { Pagination } from '@material-ui/lab';
+import { TableMenu } from 'src/components/share/table-menu';
 
 
 const Main = () => {
@@ -70,19 +71,38 @@ const Main = () => {
       width: '45',
       render: (record: any) => (record.createdAt) ? datePipe.dateConvertor(record.createdAt, 'DD MMM YYYY', locale) : '',
     },
+    {
+      key: 'Actions',
+      title: 'articles.actions',
+      width: '20',
+      render: (record) => tableActs(record, 'center'),
+    },
   ];
 
   const tableActs = (record: any, justify: 'center' | 'flex-start') => {
-    return ('Actions');
+    const Menus = [
+      {
+        title: 'articles.edit',
+        clickHandler: () => {
+          history.push(`/${locale}/articles/edit/${record.slug}`);
+        },
+      }, {
+        title: 'articles.remove',
+        clickHandler: () => {},
+      },
+    ];
+    return (
+      <TableMenu menusList={Menus} />
+    );
   };
 
   const getArticlesRecords = () => {
     setLoading(true);
-    const querParams = {
+    const queryParams = {
       limit: perPage,
       ...(page && { offset: parseInt(page, 10) * perPage }),
     };
-    getArticles(querParams).subscribe({
+    getArticles(queryParams).subscribe({
       next: (res: any) => {
         setArticles(res['data']['articles']);
         setLoading(false);
