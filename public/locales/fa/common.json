@@ -1,0 +1,247 @@
+{
+  "title": "پنل مدیریت",
+  "sidebar": {
+    "dashboard": "پنل اصلی",
+    "branchList": "لیست شعب",
+    "ourServices": "سرویس ها",
+    "statistics": "آمار و گزارشات",
+    "activities": "فعالیت\u200Cها",
+    "restricted": "مناطق ممنوعه",
+    "support": "پشتیبانی",
+    "canvas": "تنظیمات دوربین",
+    "qrCode": "بارکد",
+    "entrance": "حضور و غیاب",
+    "floorplan": "نقشه طبقات",
+    "developers": "توسعه دهندگان",
+    "users": "کارکنان",
+    "licensePlate": "پلاک خوان",
+    "history": "تاریخچه",
+    "config": "تنظیمات",
+    "online": "رخداد در لحظه",
+    "infrastructure": "زیرساخت",
+    "cameraList": "لیست دوربین\u200Cها",
+    "boardsList": "بردهای سخت\u200Cافزاری"
+  },
+  "appbar": {
+    "createDashboard": "ساخت داشبورد",
+    "addWidget": "افزودن ابزارک",
+    "addWidgetTitle": "عنوان ابزارک",
+    "selectWidget": "انتخاب ابزارک",
+    "create": "ساخت داشبورد",
+    "dashboardType": "انتخاب نوع داشبورد",
+    "dashboardName": "نام داشبورد",
+    "dashboardSlug": "شناسه داشبورد"
+  },
+  "map": {
+    "widgetTitle": "نقشه شعب",
+    "searchPlaceholder": "جستجو براساس نام...",
+    "branchPage": "پروفایل شعبه"
+  },
+  "users": {
+    "avatar": "تصویر شناسه",
+    "firstName": "نام",
+    "lastName": "نام خانوادگی",
+    "birthdate": "تاریخ تولد",
+    "phoneNumber": "شماره تماس",
+    "position": "سمت",
+    "actions": "اکشن",
+    "edit": "ویرایش",
+    "delete": "حذف",
+    "filterTitle": "فیلترهای جستجو",
+    "createUserBtn": "افزودن کاربر جدید"
+  },
+  "addUsers": {
+    "firstTab": "اطلاعات هویتی",
+    "secondTab": "تصاویر چهره",
+    "backBtn": "بازگشت",
+    "firstNameLbl": "نام",
+    "lastNameLbl": "نام خانوادگی",
+    "birthdateLbl": "تاریخ تولد",
+    "phoneNumberLbl": "شماره تماس",
+    "nationalNumberLbl": "کد ملی",
+    "genderLbl": "جنسیت",
+    "personnelIdLbl": "شماره پرسنلی",
+    "positionLbl": "سمت",
+    "BasicInfoBtn": "ثبت اطلاعات هویتی",
+    "addFace": "افزودن تصاویر چهره جدید",
+    "definedFace": "تصاویر بارگذاری شده",
+    "uploadFaces": "بارگذاری تصاویر",
+    "removeImage": "حذف تصویر انتخابی",
+    "userHistory": "تاریخچه تردد",
+    "spotted": "این کاربر در این دوربین دیده شده است: ",
+    "useCameraBtn": "استفاده از دوربین",
+    "useCameraDialogTitle": "دریافت فریم از دوربین",
+    "uploadSelectedFrame": "بارگذاری تصاویر انتخابی",
+    "openImage": "مشاهده تصویر"
+  },
+  "board-table": {
+    "title": "اطلاعات بردها",
+    "boardId": "شناسه",
+    "count": "دوربین",
+    "network": "شبکه",
+    "lastActivity": "آخرین فعالیت",
+    "boardService": "سرویس فعال",
+    "act": "اکشن"
+  },
+  "qrcode": {
+    "qrScannerTitle": "بارکد خوان",
+    "noWebcam": "سیستم شما از دوربین پشتیبانی نمیکند!",
+    "permission": "نیاز به پذیزش اجازه جهت استفاده از دوربین"
+  },
+  "camera": {
+    "cameraTitle": "عکس برداری با دوربین",
+    "noWebcam": "سیستم شما از دوربین پشتیبانی نمیکند!",
+    "permission": "نیاز به پذیزش اجازه جهت استفاده از دوربین"
+  },
+  "getFrame": {
+    "choose": "انتخاب دوربین",
+    "submitBtn": "دریافت فریم"
+  },
+  "canvas": {
+    "remove": "حذف ناحیه",
+    "transform": "جابه\u200Cجایی ناحیه",
+    "points": "ویرایش نقاط ناحیه",
+    "save": "ذخیره تغییرات",
+    "tempSave": "ذخیره موقت تغییرات",
+    "create": "افزودن ناحیه",
+    "createLine": "افزودن خط",
+    "createDirectionalLine": "افزودن خط جهت دار",
+    "edit": "ویرایش ناحیه",
+    "rectangle": "رسم 4 ضلعی",
+    "noFrameError": "امکان دریافت فریم در حال حاضر مقدور نمی باشد!",
+    "wait": "لطفا منتظر بمانید!"
+  },
+  "role": {
+    "admin": "مدیر سیستم"
+  },
+  "general": {
+    "hi": "سلام",
+    "name": "کاربر",
+    "noDataTitle": "داده\u200Cای در دسترس نیست",
+    "noDataContent": "به محض رخداد اتفاق اطلاعات مربوطه نمایش داده خواهد شد!",
+    "comingSoon": "این بخش از داشبورد به زودی رونمایی می\u200Cشود!",
+    "changeFilter": "در صورت لزوم فیلترهای اعمال شده را تغییر دهید.",
+    "loading": "در حال بارگذاری...",
+    "serverError": "خطا در برقراری ارتباط با سرور!",
+    "retry": "تلاش دوباره...",
+    "onlineMode": "حالت آنلاین",
+    "historyMode": "تاریخچه",
+    "changeView": "تغییر نحوه نمایش",
+    "noWidgetExist": "هیچ ابزارکی در داشبورد انتخابی موجود نمی\u200Cباشد.",
+    "noDashboardExist": "هیچ داشبوردی برای این مسیر ساخته نشده است.",
+    "ok": "تایید",
+    "cancel": "انصراف",
+    "yes": "بله",
+    "no": "خیر"
+  },
+  "widget": {
+    "remove": "حذف ابزارک",
+    "fullscreen": "حالت تمام صفحه",
+    "refresh": "بارگذاری مجدد",
+    "edit": "ویرایش ابزارک"
+  },
+  "cameraInfo": {
+    "widgetTitle": "اطلاعات دوربین",
+    "quality": "وضوح",
+    "status": "وضعیت",
+    "fps": "نرخ تصویر"
+  },
+  "idle": {
+    "idleTitle": "حالت خواب",
+    "idleSubtitle": "به صورت خودکار از پنل خارج خواهید شد",
+    "idleBtn": "بیخیال"
+  },
+  "charts": {
+    "heatMapChart": "نمودار تجمعی",
+    "singleBarChart": "تشخیص چهره به تفکیک اطمینان",
+    "multiBarChart": "نمودار میله\u200Cای مقایسه\u200Cای",
+    "areaBarChart": "نمودار مساحتی",
+    "pieChart": "پلاک\u200Cخوان به تفکیک دوربین",
+    "multipleRadialBarsChart": "تعداد اخطار براساس مناطق ممنوعه"
+  },
+  "people": {
+    "widgetTitle": "هشدارگر فاصله اجتماعی",
+    "saveBtn": "ذخیره تغییرات"
+  },
+  "table": {
+    "noData": "اطلاعاتی جهت نمایش در دسترس نیست"
+  },
+  "personnel": {
+    "personnelTitle": "تردد کارکنان",
+    "profileBtn": "مشاهده پروفایل",
+    "historyTitle": "تاریخچه تردد",
+    "startDateFilter": "از تاریخ",
+    "endDateFilter": "تا تاریخ",
+    "cameraFilter": "براساس دوربین",
+    "perPageFilter": "تعداد رخدادها",
+    "employeeFilter": "انتخاب افراد",
+    "loading": "در حال بارگذاری...",
+    "filterTitle": "فیلترهای جستجو",
+    "noDataTitle": "داده\u200Cای در دسترس نیست.",
+    "noDataSubtitle": "در صورت لزوم فیلترهای اعمال شده را تغییر دهید."
+  },
+  "licensePlate": {
+    "licensePlateTitle": "تردد خودروها",
+    "licensePlateHistoryTitle": "تاریخچه تردد خودروها",
+    "filterTitle": "فیلترهای جستجو",
+    "cameraFilter": "براساس دوربین",
+    "categoryFilter": "براساس نوع پلاک",
+    "cityFilter": "براساس شهر",
+    "unknown": "ناشناس",
+    "checkFrame": "مشاهده پلاک"
+  },
+  "tooltips": {
+    "delete": "حذف",
+    "assign": "الصاق کردن به...",
+    "ignore": "نادیده گرفتن",
+    "detectedFace": "تصویر مرتبط"
+  },
+  "restricted": {
+    "startDateFilter": "از تاریخ",
+    "endDateFilter": "تا تاریخ",
+    "eventFilter": "براساس نوع",
+    "cameraFilter": "براساس دوربین",
+    "perPageFilter": "تعداد رخدادها",
+    "sessionGallery": "گالری تصاویر",
+    "popupTitle": "تصاویر مربوطه",
+    "popupCameraNum": "دوربین",
+    "popupAreaNum": "ناحیه مربوطه",
+    "popupConf": "میزان دقت",
+    "popupType": "نوع تصویر",
+    "popupPrevBtn": "قبلی",
+    "popupNextBtn": "بعدی",
+    "filterTitle": "فیلترهای جستجو",
+    "logTitle": "رخدادهای مناطق ممنوعه",
+    "galleryBtn": "مشاهده تصاویر",
+    "galleryCount": "تعداد تصاویر ضبط شده:",
+    "configTitle": "تنظیمات مناطق ممنوعه"
+  },
+  "pages": {
+    "baseTitle": "سیستم مدیریت هوشمند",
+    "login": "ورود کاربر",
+    "register": "افتتاح حساب کاربری",
+    "forgetPass": "فراموشی کلمه عبور",
+    "dashboard": "پنل اصلی",
+    "licensePlate": "سرویس پلاک خوان",
+    "licensePlateHistory": "پلاک\u200Cهای خوانده شده",
+    "restricted": "مناطق ممنوعه",
+    "restrictedHistory": "تاریخچه رخدادهای مناطق ممنوعه",
+    "restrictedConfig": "تنظیمات مناطق ممنوعه",
+    "faceRec": "کنترل تردد",
+    "faceRecHistory": "تاریخچه تردد کارکنان",
+    "employees": "لیست کارکنان",
+    "profile": "پروفایل کاربری",
+    "addUser": "افزودن کاربر جدید",
+    "camerasList": "اطلاعات دوربین\u200Cهای مجموعه",
+    "boardsList": "اطلاعات بردهای سخت\u200Cافزاری"
+  },
+  "infrastructure": {
+    "cameraServices": "سرویس\u200Cهای متصل",
+    "cameraIp": "آدرس سخت\u200Cافزاری",
+    "cameraName": "عنوان دوربین",
+    "cameraPlace": "محل نصب",
+    "cameraLastActivity": "آخرین فعالیت",
+    "cameraStatus": "وضعیت در شبکه",
+    "cameraActions": "امکانات"
+  }
+}

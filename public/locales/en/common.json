@@ -1,0 +1,247 @@
+{
+  "title": "People Counting Dashboard",
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "branchList": "Branch List",
+    "ourServices": "Our Services",
+    "statistics": "Statistics",
+    "activities": "Activities",
+    "restricted": "Restricted",
+    "support": "Support",
+    "canvas": "Canvas",
+    "qrCode": "QrCode",
+    "entrance": "Entrance",
+    "floorplan": "Floorplan",
+    "developers": "Developers",
+    "users": "Users",
+    "licensePlate": "License Plate",
+    "history": "History",
+    "config": "Service Config",
+    "online": "Online Mode",
+    "infrastructure": "Infrastructure",
+    "cameraList": "Cameras List",
+    "boardsList": "Boards List"
+  },
+  "appbar": {
+    "createDashboard": "Create Dashboard",
+    "addWidget": "Add Widget",
+    "addWidgetTitle": "Widget Title",
+    "selectWidget": "Select Widget",
+    "create": "Create",
+    "dashboardType": "Select dashboard type",
+    "dashboardName": "Dashboard Name",
+    "dashboardSlug": "Dashboard Slug"
+  },
+  "map": {
+    "widgetTitle": "Branches Map View",
+    "searchPlaceholder": "Search By Name...",
+    "branchPage": "Branch Page"
+  },
+  "users": {
+    "avatar": "Avatar",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "birthdate": "Birthdate",
+    "phoneNumber": "Phone Number",
+    "position": "Position",
+    "actions": "Actions",
+    "edit": "Edit",
+    "delete": "Remove",
+    "filterTitle": "Users Filter",
+    "createUserBtn": "Add New User"
+  },
+  "addUsers": {
+    "firstTab": "Profile",
+    "secondTab": "Authorization",
+    "backBtn": "Back",
+    "firstNameLbl": "First Name",
+    "lastNameLbl": "Last Name",
+    "birthdateLbl": "Birthdate",
+    "phoneNumberLbl": "Phone Number",
+    "nationalNumberLbl": "National Number",
+    "genderLbl": "Gender",
+    "personnelIdLbl": "Personnel ID",
+    "positionLbl": "Position",
+    "BasicInfoBtn": "Save Personal Information",
+    "addFace": "Add New Face",
+    "definedFace": "Defined Faces",
+    "uploadFaces": "Upload Faces",
+    "removeImage": "Remove This Image",
+    "userHistory": "Entrance Logs",
+    "spotted": "This User is Spotted On Camera ",
+    "useCameraBtn": "Use Camera",
+    "useCameraDialogTitle": "Get Frame By Camera",
+    "uploadSelectedFrame": "Upload Selected Frame",
+    "openImage": "Open Image"
+  },
+  "board-table": {
+    "title": "Board's Data",
+    "boardId": "Board Id",
+    "count": "Count",
+    "network": "Network",
+    "lastActivity": "Last Activity",
+    "boardService": "Board Service",
+    "act": "Act"
+  },
+  "qrcode": {
+    "qrScannerTitle": "QR Scanner",
+    "noWebcam": "You Don't Have Any Webcam",
+    "permission": "Please Accept the Camera Permission"
+  },
+  "camera": {
+    "cameraTitle": "WebCam Image Capture",
+    "noWebcam": "You Don't Have Any Webcam",
+    "permission": "Please Accept the Camera Permission"
+  },
+  "getFrame": {
+    "choose": "Choose Camera",
+    "submitBtn": "Get Frame"
+  },
+  "canvas": {
+    "remove": "Remove Area",
+    "transform": "Transform Area",
+    "points": "Edit Points",
+    "create": "Create Area",
+    "createLine": "Create Line",
+    "createDirectionalLine": "Create Directional Line",
+    "save": "Save",
+    "tempSave": "Save Temporary",
+    "edit": "Edit Area",
+    "rectangle": "Draw Rectangle",
+    "noFrameError": "We Can't Get Frame Right Now, Please Try Again!",
+    "wait": "Please Wait!"
+  },
+  "role": {
+    "admin": "System Administrator"
+  },
+  "general": {
+    "hi": "Hi",
+    "name": "User",
+    "noDataTitle": "No Data",
+    "noDataContent": "We Will Show You The Log As Soon As Possible!",
+    "comingSoon": "Coming Soon!",
+    "changeFilter": "You Can Change The Filter To See More Records.",
+    "loading": "Loading...",
+    "serverError": "The Server is not Reachable",
+    "retry": "Retry...",
+    "onlineMode": "Back To Online Mode",
+    "historyMode": "Check The History",
+    "changeView": "Change Card View",
+    "noWidgetExist": "You Didn't Add Any Widget To Current Dashboard.",
+    "noDashboardExist": "You Don't Have Any Dashboard For Current Route.",
+    "ok": "OK",
+    "cancel": "Cancel",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "widget": {
+    "remove": "Remove Widget",
+    "fullscreen": "FullScreen Mode",
+    "refresh": "Refresh Widget",
+    "edit": "Widget Config"
+  },
+  "cameraInfo": {
+    "widgetTitle": "Camera information",
+    "quality": "Quality",
+    "status": "Status",
+    "fps": "FPS"
+  },
+  "idle": {
+    "idleTitle": "Are You Steel There?",
+    "idleSubtitle": "You Will SignOut After Timer End.",
+    "idleBtn": "Yes, I'm Here!"
+  },
+  "charts": {
+    "heatMapChart": "Heat Map Chart",
+    "multiBarChart": "FaceRecognition By Distance",
+    "singleBarChart": "Single Bar Chart",
+    "areaBarChart": "Area Bar Chart",
+    "pieChart": "License Plate BY Camera",
+    "multipleRadialBarsChart": "Danger Status Base On Camera"
+  },
+  "people": {
+    "widgetTitle": "People Counter",
+    "saveBtn": "Save Changes"
+  },
+  "table": {
+    "noData": "No Data To Show"
+  },
+  "personnel": {
+    "personnelTitle": "Entrance Live Log",
+    "profileBtn": "See Profile",
+    "historyTitle": "Entrance History",
+    "startDateFilter": "Start Date",
+    "endDateFilter": "End Date",
+    "cameraFilter": "Select Camera",
+    "perPageFilter": "Logs Per Page",
+    "employeeFilter": "Select Employee",
+    "loading": "Loading...",
+    "filterTitle": "Search Filters",
+    "noDataTitle": "No Data Is Exist",
+    "noDataSubtitle": "Change Your Filter If You Want."
+  },
+  "licensePlate": {
+    "licensePlateTitle": "Detected License Plate",
+    "licensePlateHistoryTitle": "Detected License Plate History",
+    "filterTitle": "Search Filters",
+    "cameraFilter": "Select Camera",
+    "categoryFilter": "Select Category",
+    "cityFilter": "Select City",
+    "unknown": "Unknown",
+    "checkFrame": "Check License Plate"
+  },
+  "tooltips": {
+    "delete": "Delete",
+    "assign": "Assign To",
+    "ignore": "Ignore It",
+    "detectedFace": "Detected Face"
+  },
+  "restricted": {
+    "startDateFilter": "Start Date",
+    "endDateFilter": "End Date",
+    "eventFilter": "Select Event",
+    "cameraFilter": "Select Camera",
+    "perPageFilter": "Logs Per Page",
+    "sessionGallery": "Session Gallery",
+    "popupTitle": "Event Gallery",
+    "popupCameraNum": "Camera",
+    "popupAreaNum": "Area Number",
+    "popupConf": "Confidence",
+    "popupType": "Image Type",
+    "popupPrevBtn": "Prev",
+    "popupNextBtn": "Next",
+    "filterTitle": "Search Filters",
+    "logTitle": "Restricted Area Logs",
+    "galleryBtn": "Check Gallery",
+    "galleryCount": "Recorded Frames Count:",
+    "configTitle": "Restricted Config"
+  },
+  "pages": {
+    "baseTitle": "Edge Platform",
+    "login": "Login User",
+    "register": "Register New Account",
+    "forgetPass": "Forget Password",
+    "dashboard": "Dashboard",
+    "licensePlate": "License Plate Service",
+    "licensePlateHistory": "License Plate History",
+    "restricted": "Restricted Area Service",
+    "restrictedHistory": "Restricted Area History Logs",
+    "restrictedConfig": "Restricted Area Config",
+    "faceRec": "Entrance",
+    "faceRecHistory": "Entrance History Logs",
+    "employees": "Employees List",
+    "profile": "User Profile",
+    "addUser": "Add New User",
+    "camerasList": "Cameras Information",
+    "boardsList": "Boards Information"
+  },
+  "infrastructure": {
+    "cameraServices": "Active Services",
+    "cameraIp": "IP Address",
+    "cameraName": "Name",
+    "cameraPlace": "Place",
+    "cameraLastActivity": "Last Activity",
+    "cameraStatus": "Status",
+    "cameraActions": "Actions"
+  }
+}
