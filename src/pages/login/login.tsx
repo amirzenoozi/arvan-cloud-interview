@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import { FormikValues, useFormik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import actions from 'src/redux/actions';
-import { useHistory } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { localStore } from 'src/helpers/storage-helper';
 import jwt from 'jwt-decode';
 import moment from 'moment';
@@ -82,7 +82,6 @@ const Login: React.FC = () => {
         <Box className={classes.FormWrapper}>
           <div className={classes.FormHeader}>
             <Typography variant='h2' component='p' className={classes.FormTitle}><strong>Login</strong></Typography>
-            <Typography variant='subtitle1' component='p'>Surveillance Smart Control</Typography>
           </div>
           <form onSubmit={formik.handleSubmit}>
             <Grid container spacing={2}>
@@ -124,9 +123,9 @@ const Login: React.FC = () => {
                 { isWaiting && <CircularProgress size={24} className={classes.buttonProgress}/>}
               </div>
               <div className={classes.SubmitBtnWrapper}>
-                <Button fullWidth color="primary" type="button" size="small" >
-                  Forget Password
-                </Button>
+                <div className={classes.SubmitBtnWrapper}>
+                  Don’t have account? <NavLink to={`/register`}><strong>Register Now</strong></NavLink>
+                </div>
               </div>
             </Box>
           </form>
