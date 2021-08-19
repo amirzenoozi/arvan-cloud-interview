@@ -14,6 +14,7 @@ import { theme } from './theme';
 const dashboardPage = lazy(() => import('./pages/dashboard'));
 const notFoundPage = lazy(() => import('./pages/not-found'));
 const loginPage = lazy(() => import('./pages/login'));
+const registerPage = lazy(() => import('./pages/register'));
 
 const App: React.FC = () => {
   const history = useHistory();
@@ -38,6 +39,7 @@ const App: React.FC = () => {
           <Switch>
             <Route exact path={`/404`} component={notFoundPage} />
             <Route exact path={`/login`} component={loginPage} />
+            <Route exact path={`/register`} component={registerPage} />
             <PrivateRoute path={[ `/${locale}/`, '/' ]} component={dashboardPage}/>
           </Switch>
         </Suspense>
