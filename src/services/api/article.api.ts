@@ -40,10 +40,18 @@ const getArticleBySlug = (slug: string): Observable<any> => {
   }) as Observable<any>;
 };
 
+const removeArticleBySlug = (slug: string): Observable<any> => {
+  return api.delete<any>({
+    url: `api/articles/${slug}`,
+    shouldAuth: true,
+  }) as Observable<any>;
+};
+
 export {
   getArticles,
   getArticleTags,
   createNewArticle,
   updateArticleBySlug,
   getArticleBySlug,
+  removeArticleBySlug,
 };

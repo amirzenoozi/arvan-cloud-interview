@@ -1,17 +1,35 @@
-import { Box, Chip, IconButton, Paper, Tooltip, Typography } from '@material-ui/core';
+import {
+  Box, Button,
+  Chip,
+  Dialog, DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  IconButton,
+  Paper, Snackbar,
+  Tooltip,
+  Typography,
+} from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useStyle } from './main.style';
 import { IColumnsProp, Table } from 'src/components/share/table';
 import { getArticles } from 'src/services/api/article.api';
+import { removeArticleBySlug } from 'src/services/api/article.api';
 import { useSelector } from 'react-redux';
 import { AppState } from 'src/redux/store';
 import { DatePipe } from 'src/pipes/date/date.pipe';
 import { Cached } from '@material-ui/icons';
 import { useHistory, useParams } from 'react-router-dom';
-import { Pagination } from '@material-ui/lab';
+import { Alert, Pagination } from '@material-ui/lab';
 import { TableMenu } from 'src/components/share/table-menu';
 
+interface snackBar {
+  type: 'success' | 'info' | 'warning' | 'error',
+  message: string,
+  duration: number,
+  isOpen: boolean,
+}
 
 const Main = () => {
   const classes = useStyle();
@@ -22,6 +40,9 @@ const Main = () => {
   const [ articles, setArticles ] = useState<any[]>([]);
   const [ loading, setLoading ] = useState(true);
   const [ perPage, setPerPage ] = useState(10);
+  const [ selectToDelete, setSelectToDelete ] = useState('');
+  const [ snackBar, setSnackBar ] = useState<snackBar>({ type: 'success', message: '', duration: 5000, isOpen: false });
+  const [ isRemoveModalOpen, setIsRemoveModalOpen ] = React.useState(false);
   const { locale } = useSelector((state: AppState) => state.AppSetting);
 
   const tableColumns: IColumnsProp<any>[] = [
@@ -88,7 +109,10 @@ const Main = () => {
         },
       }, {
         title: 'articles.remove',
-        clickHandler: () => {},
+        clickHandler: () => {
+          setSelectToDelete(record.slug);
+          setIsRemoveModalOpen(true);
+        },
       },
     ];
     return (
@@ -116,6 +140,25 @@ const Main = () => {
 
   const paginate = (e: any, pageNumber: number) => {
     history.push(`/${locale}/articles/page/${pageNumber}`);
+  };
+
+  const removeSingleArticle = () => {
+    removeArticleBySlug( selectToDelete ).subscribe({
+      next: (res: any) => {
+        setIsRemoveModalOpen(false);
+        setSelectToDelete('');
+        getArticlesRecords();
+      },
+      error: (err: any) => {
+        setSnackBar({ type: 'error', message: err.data.errors.body[1], duration: 5000, isOpen: true });
+        setIsRemoveModalOpen(false);
+        setSelectToDelete('');
+      },
+    });
+  };
+
+  const handleClose = () => {
+    setSnackBar({ ...snackBar, isOpen: false });
   };
 
   useEffect(() => {
@@ -164,6 +207,29 @@ const Main = () => {
           </div>
         )}
       </Box>
+      <Dialog
+        open={isRemoveModalOpen}
+        onClose={() => setIsRemoveModalOpen(false)}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">Delete Article</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            Are You Sure to Delete this Article ?
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => {
+            setIsRemoveModalOpen(false);
+            setSelectToDelete('');
+          }} color="primary">No</Button>
+          <Button onClick={removeSingleArticle} color="primary" autoFocus>Yes</Button>
+        </DialogActions>
+      </Dialog>
+      <Snackbar open={snackBar.isOpen} autoHideDuration={snackBar.duration} onClose={handleClose}>
+        <Alert onClose={handleClose} severity={snackBar.type}>{ snackBar.message }</Alert>
+      </Snackbar>
     </Box>
   );
 };
