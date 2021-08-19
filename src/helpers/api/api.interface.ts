@@ -13,6 +13,8 @@ export interface IApiPostProps {
   queryParams?: object;
   shouldAuth?: boolean;
   localStoreKey?: string;
+  retryCount?: number;
+  retryDelay?: number;
 }
 
 export interface IApiDeleteProps {
@@ -20,4 +22,6 @@ export interface IApiDeleteProps {
   queryParams?: object;
   shouldAuth?: boolean;
   localStoreKey?: string;
+  retryCount?: number;
+  retryDelay?: number;
 }
