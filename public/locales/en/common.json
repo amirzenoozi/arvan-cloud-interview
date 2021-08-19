@@ -26,5 +26,13 @@
   },
   "pages": {
     "baseTitle": "Arvan Cloud"
+  },
+  "articles": {
+    "index": "#",
+    "title": "Title",
+    "author": "Author",
+    "tags": "Tag List",
+    "description": "Description",
+    "timestamp": "Created At."
   }
 }

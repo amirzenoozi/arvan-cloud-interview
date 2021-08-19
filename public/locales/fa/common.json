@@ -26,5 +26,13 @@
   },
   "pages": {
     "baseTitle": "ابرآروان"
+  },
+  "articles": {
+    "index": "#",
+    "title": "عنوان",
+    "author": "نویسنده",
+    "tags": "برچسب ها",
+    "description": "خلاصه مقاله",
+    "timestamp": "تاریخ انتشار"
   }
 }
