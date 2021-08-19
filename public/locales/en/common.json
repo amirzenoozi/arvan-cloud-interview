@@ -33,6 +33,9 @@
     "author": "Author",
     "tags": "Tag List",
     "description": "Description",
-    "timestamp": "Created At."
+    "timestamp": "Created At.",
+    "actions": "Actions",
+    "edit": "Edit",
+    "remove": "Remove"
   }
 }

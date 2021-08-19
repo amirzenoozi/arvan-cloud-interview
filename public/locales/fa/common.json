@@ -33,6 +33,9 @@
     "author": "نویسنده",
     "tags": "برچسب ها",
     "description": "خلاصه مقاله",
-    "timestamp": "تاریخ انتشار"
+    "timestamp": "تاریخ انتشار",
+    "actions": "عملیات",
+    "edit": "ویرایش",
+    "remove": "حذف"
   }
 }
