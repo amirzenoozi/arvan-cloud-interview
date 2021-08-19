@@ -5,11 +5,9 @@ import { FormikValues, useFormik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import actions from 'src/redux/actions';
 import { useHistory } from 'react-router-dom';
-import { localStore } from 'src/helpers/storage-helper';
-import jwt from 'jwt-decode';
-import moment from 'moment';
+import { NavLink } from 'react-router-dom';
 import { AppState } from 'src/redux/store';
-import { userLogin } from 'src/services/api/user.api';
+import { userRegister } from 'src/services/api/user.api';
 
 // Materia-l UI Components
 import { Box } from '@material-ui/core';
@@ -27,10 +25,10 @@ const Register: React.FC = () => {
   const classes = useStyle();
   const [ isWaiting, setIsWaiting ] = useState<boolean>(false);
   const { locale } = useSelector((state: AppState) => state.AppSetting );
-  const { token } = useSelector((state: AppState) => state.User);
 
   const validationSchema = Yup.object().shape({
     username: Yup.string().required('This Field is required'),
+    email: Yup.string().required('This Field is required'),
     password: Yup.string().required('This Field is required'),
   });
 
@@ -38,11 +36,27 @@ const Register: React.FC = () => {
 
   const formSubmitHandler = ( values: FormikValues ) => {
     setIsWaiting( (prevState: boolean) => true );
+    userRegister({ user: { username: values.username, email: values.email, password: values.password }}).subscribe({
+      next: ( response: any) => {
+        dispatch(actions.User.setUserInfo({
+          token: response['user']['token'],
+          avatar: response['user']['image'],
+          firstName: response['user']['username'],
+        }));
+        setTimeout( () => {
+          history.push(`/${locale}/articles`);
+        }, 1000);
+      },
+      error: (err) => {
+        setIsWaiting( (prevState: boolean) => false );
+      },
+    });
   };
 
   const formik = useFormik({
     initialValues: {
       username: '',
+      email: '',
       password: '',
     },
     validationSchema: validationSchema,
@@ -54,8 +68,7 @@ const Register: React.FC = () => {
       <Paper className={classes.Wrapper}>
         <Box className={classes.FormWrapper}>
           <div className={classes.FormHeader}>
-            <Typography variant='h2' component='p' className={classes.FormTitle}><strong>Login</strong></Typography>
-            <Typography variant='subtitle1' component='p'>Surveillance Smart Control</Typography>
+            <Typography variant='h2' component='p' className={classes.FormTitle}><strong>Register</strong></Typography>
           </div>
           <form onSubmit={formik.handleSubmit}>
             <Grid container spacing={2}>
@@ -70,6 +83,20 @@ const Register: React.FC = () => {
                     onChange={formik.handleChange}
                     error={formik.touched.username && Boolean(formik.errors.username)}
                     helperText={formik.touched.username && formik.errors.username}
+                  />
+                </FormControl>
+              </Grid>
+              <Grid item xs={12}>
+                <FormControl variant="outlined" style={{ width: '100%' }}>
+                  <TextField
+                    fullWidth
+                    name="email"
+                    label="Email"
+                    variant="outlined"
+                    value={formik.values.email}
+                    onChange={formik.handleChange}
+                    error={formik.touched.email && Boolean(formik.errors.email)}
+                    helperText={formik.touched.email && formik.errors.email}
                   />
                 </FormControl>
               </Grid>
@@ -97,9 +124,7 @@ const Register: React.FC = () => {
                 { isWaiting && <CircularProgress size={24} className={classes.buttonProgress}/>}
               </div>
               <div className={classes.SubmitBtnWrapper}>
-                <Button fullWidth color="primary" type="button" size="small" >
-                  Forget Password
-                </Button>
+                Already Registered? <NavLink to={`/login`}><strong>Login</strong></NavLink>
               </div>
             </Box>
           </form>
