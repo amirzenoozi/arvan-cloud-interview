@@ -129,6 +129,8 @@ module.exports = (env = {}) => {
       port: Environments.port,
       allowedHosts: [
         `http://localhost:${Environments.port + 1}/`,
+        'https://conduit.productionready.io/',
+        'https://conduit-api-realworld.herokuapp.com/',
       ],
       headers: {
         'Access-Control-Allow-Origin': '*',

@@ -38,8 +38,8 @@ const Login: React.FC = () => {
     if ( localStore.get('token') !== null ) {
       const decodedJwt: any = jwt(localStore.get('token'));
       const now = moment();
-      const expDate = moment(decodedJwt['exp'] * 1000);
-      if (now.isBefore(expDate)) {
+      const expDate = moment(decodedJwt['iat'] * 1000);
+      if (expDate.isValid()) {
         history.push(`/${locale}/dashboard`);
       } else {
         localStorage.removeItem('token');
@@ -52,14 +52,14 @@ const Login: React.FC = () => {
     setIsWaiting( (prevState: boolean) => true );
     userLogin({ user: { email: values.username, password: values.password }}).subscribe({
       next: ( response: any) => {
-        setIsWaiting( (prevState: boolean) => false );
-        const token = response['user']['token'];
-        history.push(`/${locale}/dashboard`);
         dispatch(actions.User.setUserInfo({
-          token,
+          token: response['user']['token'],
           avatar: response['user']['image'],
           firstName: response['user']['username'],
         }));
+        setTimeout( () => {
+          history.push(`/${locale}/dashboard`);
+        }, 1000);
       },
       error: (err) => {
         setIsWaiting( (prevState: boolean) => false );

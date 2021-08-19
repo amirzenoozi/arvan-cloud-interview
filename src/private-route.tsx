@@ -30,8 +30,8 @@ const PrivateRoute: React.FC<IPropsPrivateRoute> = ({
     if ( localStore.get('token') !== null ) {
       const decodedJwt: any = jwt(localStore.get('token'));
       const now = moment();
-      const expDate = moment(decodedJwt['exp'] * 1000);
-      if (now.isBefore(expDate)) {
+      const expDate = moment(decodedJwt['iat'] * 1000);
+      if (expDate.isValid()) {
         return true;
       } else {
         localStorage.removeItem('token');
