@@ -105,6 +105,8 @@ const Main = () => {
   useEffect(() => {
     if ( page === '1' ) {
       history.push(`/${locale}/articles`);
+    } else {
+      getArticlesRecords();
     }
   }, [page]);
 
@@ -132,7 +134,7 @@ const Main = () => {
         {!!articles.length && (
           <div className={classes.footer}>
             <Pagination
-              count={50}
+              count={20}
               page={(page) ? parseInt(page, 10) : 1}
               onChange={paginate}
               color="primary"
