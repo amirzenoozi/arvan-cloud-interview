@@ -2,10 +2,10 @@ const client = require('scp2');
 const { NodeSSH } = require('node-ssh');
 const chalk = require('chalk');
 
-const HOST = '192.168.2.200';
-const USERNAME = 'mhs';
-const PASSWORD = 'Mhs@Sensifai';
-const PATH = '/home/mhs/frontend/edge-platform/';
+const HOST = 'HOST';
+const USERNAME = 'USER';
+const PASSWORD = 'PASS';
+const PATH = 'PATH';
 
 client.scp('build/', {
   host: HOST,
